@@ -1,22 +1,66 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
+import Link from "./Link";
 const Main = () => {
+  const [link, setLink] = useState("");
+  const [links, setLinks] = useState([]);
+  const inputRef = useRef(null);
+  const errorRef = useRef(null);
+
+  const fetchShortLink = async (url) => {
+    await fetch(`https://api.shrtco.de/v2/shorten?url=${url}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setLinks([{ link: url, shortLink: data.result.short_link }, ...links]);
+
+        inputRef.current.value = "";
+        errorRef.current.style.opacity = 0;
+        inputRef.current.classList.remove("input-invalid");
+      })
+      .catch((error) => {
+        console.error(error);
+        errorRef.current.style.opacity = 1;
+        inputRef.current.classList.add("input-invalid");
+      });
+  };
+
+  useEffect(() => {
+    if (!localStorage.getItem("links")) {
+      return;
+    }
+    const storageLinks = JSON.parse(localStorage.getItem("links"));
+    setLinks([...storageLinks]);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("links", JSON.stringify(links));
+  }, [links]);
+
   return (
     <Full>
       <Container>
         <Shorten>
-          <input type="text" placeholder="Shorten a link here..." />
-          <button className="button button-cyan button-big button-shorten">
+          <input
+            type="text"
+            placeholder="Shorten a link here..."
+            ref={inputRef}
+            onChange={(e) => setLink(e.target.value)}
+          />
+          <button
+            className="button button-cyan button-big button-shorten"
+            type="button"
+            onClick={() => fetchShortLink(link)}
+          >
             Shorten It!
           </button>
-          <span className="span-invalid">Please add a link!</span>
+          <span className="span-invalid" ref={errorRef}>
+            Please add a valid link!
+          </span>
         </Shorten>
         <div className="results">
-          <div className="shortened">
-            <span className="link">https://frontendmentor.io</span>
-            <span className="link-short">https://rel.ink/k4k23k</span>
-            <button className="button button-cyan">Copy</button>
-          </div>
+          {links.map((link, id) => {
+            return <Link key={id} links={link} />;
+          })}
         </div>
         <h2 className="heading-2">Advanced Statistics</h2>
         <p className="paragraph">
@@ -71,7 +115,7 @@ const Container = styled.section`
   text-align: center;
   padding-bottom: 15rem;
   .results {
-    margin-bottom: 5rem;
+    margin-bottom: 10rem;
     margin-top: -6rem;
   }
   .paragraph {
@@ -89,6 +133,7 @@ const Container = styled.section`
     display: flex;
     align-items: center;
     animation: moveIn ease-in 250ms;
+    margin-bottom: 2rem;
   }
   .link {
     font-size: 2.2rem;
@@ -102,6 +147,10 @@ const Container = styled.section`
   }
   .button {
     border-radius: 1rem;
+    width: 13rem;
+  }
+  .copied {
+    background-color: var(--very-dark-violet);
   }
 `;
 
@@ -126,6 +175,9 @@ const Shorten = styled.div`
     font-weight: bold;
     border: 4px solid transparent;
     transition: all 167ms;
+  }
+  input:focus {
+    border: 4px solid var(--cyan);
   }
   .input-invalid {
     border: 4px solid var(--red);
