@@ -18,6 +18,9 @@ const Main = () => {
         </p>
         <Cards>
           <div className="card">
+            <div className="icon">
+              <img src="/images/icon-brand-recognition.svg" alt="recognition" />
+            </div>
             <h3 className="heading-3">Brand Recognition</h3>
             <p className="paragraph">
               Boost your brand recognition with each click. Generic links don’t
@@ -26,6 +29,9 @@ const Main = () => {
             </p>
           </div>
           <div className="card">
+            <div className="icon">
+              <img src="/images/icon-detailed-records.svg" alt="records" />
+            </div>
             <h3 className="heading-3">Detailed Records</h3>
             <p className="paragraph">
               Gain insights into who is clicking your links. Knowing when and
@@ -34,6 +40,9 @@ const Main = () => {
             </p>
           </div>
           <div className="card">
+            <div className="icon">
+              <img src="/images/icon-fully-customizable.svg" alt="custom" />
+            </div>
             <h3 className="heading-3">Fully Customizable</h3>
             <p className="paragraph">
               Improve brand awareness and content discoverability through
@@ -53,6 +62,7 @@ const Container = styled.section`
   width: 1128px;
   margin: 0 auto;
   text-align: center;
+  padding-bottom: 15rem;
   .results {
     margin-bottom: 5rem;
   }
@@ -63,7 +73,7 @@ const Container = styled.section`
 `;
 
 const Shorten = styled.div`
-  background-image: url("/images/bg-boost-desktop.svg");
+  background-image: url("/images/bg-shorten-desktop.svg");
   width: 100%;
   padding: 5.6rem 7rem;
   background-size: cover;
@@ -100,10 +110,51 @@ const Shorten = styled.div`
 const Cards = styled.div`
   display: flex;
   text-align: left;
+  align-items: flex-start;
   margin-top: 8rem;
-  p {
-    margin: 0;
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    display: block;
     width: 100%;
+    height: 1rem;
+    top: 45%;
+    background-color: var(--cyan);
+    position: absolute;
+    z-index: -1;
+  }
+  .card {
+    background-color: var(--white);
+    padding: 3.5rem;
+    padding-top: 0;
+    border-radius: 1rem;
+
+    &:nth-of-type(2) {
+      margin-top: 6rem;
+    }
+    &:nth-of-type(3) {
+      margin-top: 12rem;
+    }
+
+    .icon {
+      background-color: var(--dark-violet);
+      border-radius: 50%;
+      width: 80px;
+      transform: translateY(-50%);
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    p {
+      margin: 0;
+      width: 100%;
+      font-size: 1.7rem;
+    }
+  }
+  .card:not(:last-child) {
+    margin-right: 3rem;
   }
 `;
 
