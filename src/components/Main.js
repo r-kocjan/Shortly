@@ -12,7 +12,7 @@ const Main = () => {
       .then((response) => response.json())
       .then((data) => {
         setLinks([{ link: url, shortLink: data.result.short_link }, ...links]);
-
+        setLink("");
         inputRef.current.value = "";
         errorRef.current.style.opacity = 0;
         inputRef.current.classList.remove("input-invalid");
@@ -114,6 +114,10 @@ const Container = styled.section`
   margin: 0 auto;
   text-align: center;
   padding-bottom: 15rem;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
   .results {
     margin-bottom: 10rem;
     margin-top: -6rem;
@@ -134,20 +138,47 @@ const Container = styled.section`
     align-items: center;
     animation: moveIn ease-in 250ms;
     margin-bottom: 2rem;
+    position: relative;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 0.1px;
+        background-color: hsl(0, 0%, 90%);
+        left: 0;
+        top: 34%;
+      }
+    }
   }
   .link {
     font-size: 2.2rem;
     color: var(--very-dark-blue);
+    @media (max-width: 768px) {
+      margin-bottom: 2rem;
+
+      width: 100%;
+    }
   }
   .link-short {
     margin-left: auto;
     font-size: 2.2rem;
     color: var(--cyan);
     margin-right: 2rem;
+    @media (max-width: 768px) {
+      margin: 0;
+    }
   }
   .button {
     border-radius: 1rem;
     width: 13rem;
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-top: 1.5rem;
+    }
   }
   .copied {
     background-color: var(--very-dark-violet);
@@ -165,6 +196,16 @@ const Shorten = styled.div`
   display: flex;
   transform: translateY(-50%);
   position: relative;
+
+  @media (max-width: 768px) {
+    background-image: url("/images/bg-shorten-mobile.svg");
+    background-position: center;
+    background-size: contain;
+    flex-direction: column;
+    padding: 4.5rem 3rem;
+    background-repeat: no-repeat;
+  }
+
   input {
     width: 80%;
     margin-right: 3.5rem;
@@ -175,7 +216,14 @@ const Shorten = styled.div`
     font-weight: bold;
     border: 4px solid transparent;
     transition: all 167ms;
+    @media (max-width: 768px) {
+      padding: 1.5rem;
+      width: 100%;
+      margin: 0;
+      margin-bottom: 1.5rem;
+    }
   }
+
   input:focus {
     border: 4px solid var(--cyan);
   }
@@ -192,6 +240,11 @@ const Shorten = styled.div`
     bottom: 1.8rem;
     transition: all 167ms;
     opacity: 0;
+    @media (max-width: 768px) {
+      font-size: 1.6rem;
+      bottom: 1rem;
+      margin-left: 3rem;
+    }
   }
   input:focus {
     outline: none;
@@ -206,6 +259,9 @@ const Shorten = styled.div`
   .button-shorten {
     width: 20%;
     border-radius: 1rem;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 `;
 
@@ -216,6 +272,13 @@ const Cards = styled.div`
   margin-top: 8rem;
   position: relative;
   z-index: 1;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8rem;
+    margin-top: 12rem;
+  }
   &::before {
     content: "";
     display: block;
@@ -225,18 +288,33 @@ const Cards = styled.div`
     background-color: var(--cyan);
     position: absolute;
     z-index: -1;
+    @media (max-width: 768px) {
+      width: 1rem;
+      height: 90%;
+      top: 0;
+    }
   }
   .card {
     background-color: var(--white);
     padding: 3.5rem;
     padding-top: 0;
     border-radius: 1rem;
-
+    position: relative;
+    @media (max-width: 768px) {
+      height: 30rem;
+      width: 90%;
+    }
     &:nth-of-type(2) {
       margin-top: 6rem;
+      @media (max-width: 768px) {
+        margin: 0;
+      }
     }
     &:nth-of-type(3) {
       margin-top: 12rem;
+      @media (max-width: 768px) {
+        margin: 0;
+      }
     }
 
     .icon {
@@ -248,15 +326,31 @@ const Cards = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
+      @media (max-width: 768px) {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
     p {
       margin: 0;
       width: 100%;
       font-size: 1.7rem;
+      @media (max-width: 768px) {
+        font-size: 1.8rem;
+      }
+    }
+    @media (max-width: 768px) {
+      h3 {
+        margin-top: 8rem;
+      }
     }
   }
   .card:not(:last-child) {
     margin-right: 3rem;
+    @media (max-width: 768px) {
+      margin: 0;
+    }
   }
 `;
 

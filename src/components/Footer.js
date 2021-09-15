@@ -80,6 +80,9 @@ const Container = styled.footer`
   margin: 0 auto;
   display: flex;
   align-items: flex-start;
+  @media (max-width: 768px) {
+    width: 90%;
+  }
   img {
     margin-right: auto;
   }

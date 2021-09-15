@@ -32,3 +32,8 @@ a {
   color: var(--gray);
   font-size: 1.6rem;
 }
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+}

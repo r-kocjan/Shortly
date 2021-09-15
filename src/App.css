@@ -44,6 +44,7 @@
   margin-bottom: 1.5rem;
   color: var(--very-dark-blue);
 }
+
 .white {
   color: #fff;
 }
@@ -52,6 +53,18 @@
   width: 50%;
   color: var(--grayish-violet);
   margin-bottom: 4rem;
+}
+
+@media (max-width: 768px) {
+  .heading-1 {
+    font-size: 5rem;
+  }
+  .heading-2 {
+    font-size: 3.3rem;
+  }
+  .paragraph {
+    width: 100%;
+  }
 }
 
 @keyframes moveIn {

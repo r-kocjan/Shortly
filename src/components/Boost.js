@@ -22,6 +22,9 @@ const Container = styled.section`
   width: 1128px;
   margin: 0 auto;
   text-align: center;
+  @media (max-width: 768px) {
+    width: 90%;
+  }
   h2 {
     margin-bottom: 3rem;
   }

@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <Container>
       <img src="/images/logo.svg" alt="logo" />
-      <div className="content">
+      <div className="desktop-menu">
         <Menu>
           <li>
             <a>Features</a>
@@ -35,13 +35,21 @@ const Container = styled.div`
   margin-top: 4.5rem;
   display: flex;
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
   img {
     cursor: pointer;
   }
-  .content {
+  .desktop-menu {
     display: flex;
 
     width: 100%;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
 
     .buttons {
       margin-left: auto;
