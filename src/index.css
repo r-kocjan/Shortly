@@ -25,3 +25,10 @@ body {
   font-size: 1.6rem;
   overflow-x: hidden;
 }
+ul {
+  list-style: none;
+}
+a {
+  color: var(--gray);
+  font-size: 1.6rem;
+}
