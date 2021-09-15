@@ -93,6 +93,13 @@ const Container = styled.footer`
     }
     li {
       margin-bottom: 1rem;
+      cursor: pointer;
+    }
+    a {
+      transition: all 167ms;
+    }
+    li:hover a {
+      color: var(--cyan);
     }
   }
   .social {

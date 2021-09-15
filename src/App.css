@@ -53,3 +53,15 @@
   color: var(--grayish-violet);
   margin-bottom: 4rem;
 }
+
+@keyframes moveIn {
+  0% {
+    transform: translateX(-30%);
+  }
+  70% {
+    transform: translateX(5%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

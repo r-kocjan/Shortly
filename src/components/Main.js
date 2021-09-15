@@ -9,8 +9,15 @@ const Main = () => {
           <button className="button button-cyan button-big button-shorten">
             Shorten It!
           </button>
+          <span className="span-invalid">Please add a link!</span>
         </Shorten>
-        <div className="results"></div>
+        <div className="results">
+          <div className="shortened">
+            <span className="link">https://frontendmentor.io</span>
+            <span className="link-short">https://rel.ink/k4k23k</span>
+            <button className="button button-cyan">Copy</button>
+          </div>
+        </div>
         <h2 className="heading-2">Advanced Statistics</h2>
         <p className="paragraph">
           Track how your links are performing across the web with our advanced
@@ -65,10 +72,36 @@ const Container = styled.section`
   padding-bottom: 15rem;
   .results {
     margin-bottom: 5rem;
+    margin-top: -6rem;
   }
   .paragraph {
     margin: 0 auto;
     font-size: 2rem;
+  }
+  .results {
+    width: 100%;
+  }
+  .shortened {
+    background-color: var(--white);
+    border-radius: 1rem;
+    text-align: left;
+    padding: 2rem 4rem;
+    display: flex;
+    align-items: center;
+    animation: moveIn ease-in 250ms;
+  }
+  .link {
+    font-size: 2.2rem;
+    color: var(--very-dark-blue);
+  }
+  .link-short {
+    margin-left: auto;
+    font-size: 2.2rem;
+    color: var(--cyan);
+    margin-right: 2rem;
+  }
+  .button {
+    border-radius: 1rem;
   }
 `;
 
@@ -82,6 +115,7 @@ const Shorten = styled.div`
   border-radius: 1rem;
   display: flex;
   transform: translateY(-50%);
+  position: relative;
   input {
     width: 80%;
     margin-right: 3.5rem;
@@ -90,6 +124,22 @@ const Shorten = styled.div`
     border: 0;
     font-size: 1.9rem;
     font-weight: bold;
+    border: 4px solid transparent;
+    transition: all 167ms;
+  }
+  .input-invalid {
+    border: 4px solid var(--red);
+  }
+  .span-invalid {
+    color: var(--red);
+    font-size: 1.8rem;
+    position: absolute;
+    left: 0;
+    margin-left: 7rem;
+    font-style: italic;
+    bottom: 1.8rem;
+    transition: all 167ms;
+    opacity: 0;
   }
   input:focus {
     outline: none;
