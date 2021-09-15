@@ -1,0 +1,47 @@
+.button {
+  border: 0;
+  padding: 1rem 2.5rem;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: all 167ms;
+}
+.button-login {
+  margin-right: 3rem;
+  color: var(--grayish-violet);
+  background: transparent;
+}
+.button-login:hover {
+  color: var(--very-dark-blue);
+}
+.button-cyan {
+  background-color: var(--cyan);
+  color: var(--white);
+  border-radius: 50rem;
+}
+.button-big {
+  padding: 1.5rem 4rem;
+  font-size: 1.9rem;
+  letter-spacing: 1px;
+}
+.button-cyan:hover {
+  background-color: hsl(180, 66%, 65%);
+}
+.heading-1 {
+  font-size: 7.5rem;
+  line-height: 1.1;
+  color: var(--very-dark-blue);
+  margin-bottom: 1rem;
+}
+.heading-2 {
+  font-size: 3.5rem;
+  color: var(--very-dark-blue);
+  margin-bottom: 1.5rem;
+}
+.paragraph {
+  font-size: 2.2rem;
+  width: 50%;
+  color: var(--grayish-violet);
+  margin-bottom: 4rem;
+}
