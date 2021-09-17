@@ -141,7 +141,9 @@ const Container = styled.section`
     @media (max-width: 768px) {
       flex-direction: column;
       align-items: flex-start;
-
+      .button-cyan {
+        font-size: 1.8rem;
+      }
       &::before {
         content: "";
         position: absolute;
@@ -201,7 +203,6 @@ const Shorten = styled.div`
   @media (max-width: 768px) {
     background-image: url("/images/bg-shorten-mobile.svg");
     background-position: center;
-    background-size: contain;
     flex-direction: column;
     padding: 4.5rem 3rem;
     background-repeat: no-repeat;
