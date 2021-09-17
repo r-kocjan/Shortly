@@ -74,6 +74,9 @@ const Footer = () => {
 const Full = styled.div`
   padding: 8rem;
   background-color: var(--very-dark-violet);
+  @media (max-width: 768px) {
+    padding-bottom: 3.5rem;
+  }
 `;
 const Container = styled.footer`
   width: 1128px;

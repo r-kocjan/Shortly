@@ -10,7 +10,7 @@ const Link = (props) => {
     setTimeout(() => {
       buttonRef.current.textContent = "Copy";
       buttonRef.current.classList.remove("copied");
-    }, 3000);
+    }, 1000);
   };
   return (
     <div className="shortened">
