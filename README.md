@@ -5,48 +5,34 @@ This is a solution to the [Shortly URL shortening API Challenge challenge on Fro
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
-  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
-### The challenge
-
-Users should be able to:
-
-- View the optimal layout for the site depending on their device's screen size
-- Shorten any valid URL
-- See a list of their shortened links, even after refreshing the browser
-- Copy the shortened link to their clipboard in a single click
-- Receive an error message when the `form` is submitted if:
-  - The `input` field is empty
 
 ### Screenshot
 
-![](./screenshot.jpg)
+#### Desktop:
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
+![Zrzut ekranu 2021-09-17 153214](https://user-images.githubusercontent.com/65490113/133791519-026251c5-d9ea-48e9-b33a-1e1d690cc6cd.png)
+![Zrzut ekranu 2021-09-17 153244](https://user-images.githubusercontent.com/65490113/133791528-304cb971-ae05-4d33-b4c7-5071f4b07db9.png)
+![Zrzut ekranu 2021-09-17 153306](https://user-images.githubusercontent.com/65490113/133791534-94f474eb-d78d-4816-8fd7-c6ab99128a43.png)
+![Zrzut ekranu 2021-09-17 153316](https://user-images.githubusercontent.com/65490113/133791539-11574d09-73d6-40fe-9196-9009da060a53.png)
+![Zrzut ekranu 2021-09-17 153327](https://user-images.githubusercontent.com/65490113/133791548-d5f6b0b2-55ec-4f02-a612-e31bafee0140.png)
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
 
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
+### Mobile: 
 
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Zrzut ekranu 2021-09-17 153415](https://user-images.githubusercontent.com/65490113/133791572-32394e6a-d4d9-4bb8-9c31-6672e4eeea0a.png)
+![Zrzut ekranu 2021-09-17 153427](https://user-images.githubusercontent.com/65490113/133791579-f89f9d32-807b-48a6-b109-5c82a0e0b5ef.png)
+![Zrzut ekranu 2021-09-17 153444](https://user-images.githubusercontent.com/65490113/133791586-11f2fb77-5f6d-4560-8791-e4b34105fb8d.png)
+![Zrzut ekranu 2021-09-17 153504](https://user-images.githubusercontent.com/65490113/133791593-68082afb-b30c-494f-8f89-a87efea91671.png)
+![Zrzut ekranu 2021-09-17 153521](https://user-images.githubusercontent.com/65490113/133791600-169fd031-9c16-4ff3-b5d5-c6221b8576dc.png)
 
-### Links
-
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
 
@@ -56,60 +42,11 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - CSS custom properties
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
 - [Styled Components](https://styled-components.com/) - For styles
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
-### What I learned
-
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Remigiusz :)
