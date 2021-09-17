@@ -17,6 +17,11 @@ const Full = styled.div`
   background-image: url("/images/bg-boost-desktop.svg");
   background-size: cover;
   background-repeat: no-repeat;
+  @media (max-width: 768px) {
+    background-image: url("/images/bg-boost-mobile.svg");
+    background-position: center;
+    padding: 8rem 0;
+  }
 `;
 const Container = styled.section`
   width: 1128px;

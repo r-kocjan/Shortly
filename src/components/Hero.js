@@ -15,6 +15,7 @@ const Hero = () => {
           <button className="button button-big button-cyan">Get Started</button>
         </div>
       </Container>
+
       <img
         src="/images/illustration-working.svg"
         alt="hero"
@@ -28,8 +29,11 @@ const Full = styled.div`
   margin-top: 15rem;
   padding-bottom: 25rem;
   min-height: 90vh;
-  /* overflow-x: hidden; */
+
   @media (max-width: 768px) {
+    position: relative;
+    overflow: hidden;
+    margin-top: 5rem;
   }
   .hero-image {
     position: absolute;
@@ -39,7 +43,7 @@ const Full = styled.div`
     width: 50%;
     @media (max-width: 768px) {
       left: 65%;
-      top: 16%;
+      top: 0;
       width: 115%;
       transform: translateX(-50%);
     }
@@ -51,7 +55,7 @@ const Container = styled.section`
   position: relative;
 
   @media (max-width: 768px) {
-    padding-top: 35rem;
+    padding-top: 40rem;
     width: 90%;
     text-align: center;
     p {

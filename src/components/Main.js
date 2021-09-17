@@ -4,23 +4,21 @@ import Link from "./Link";
 const Main = () => {
   const [link, setLink] = useState("");
   const [links, setLinks] = useState([]);
+  const [error, setError] = useState(false);
   const inputRef = useRef(null);
-  const errorRef = useRef(null);
 
   const fetchShortLink = async (url) => {
     await fetch(`https://api.shrtco.de/v2/shorten?url=${url}`)
       .then((response) => response.json())
       .then((data) => {
-        setLinks([{ link: url, shortLink: data.result.short_link }, ...links]);
+        setLinks([...links, { link: url, shortLink: data.result.short_link }]);
+        setError(false);
         setLink("");
         inputRef.current.value = "";
-        errorRef.current.style.opacity = 0;
-        inputRef.current.classList.remove("input-invalid");
       })
       .catch((error) => {
         console.error(error);
-        errorRef.current.style.opacity = 1;
-        inputRef.current.classList.add("input-invalid");
+        setError(true);
       });
   };
 
@@ -43,6 +41,7 @@ const Main = () => {
           <input
             type="text"
             placeholder="Shorten a link here..."
+            className={`${error && "input-invalid"}`}
             ref={inputRef}
             onChange={(e) => setLink(e.target.value)}
           />
@@ -53,7 +52,7 @@ const Main = () => {
           >
             Shorten It!
           </button>
-          <span className="span-invalid" ref={errorRef}>
+          <span className={`span-invalid ${error && "show"}`}>
             Please add a valid link!
           </span>
         </Shorten>
@@ -157,9 +156,11 @@ const Container = styled.section`
   .link {
     font-size: 2.2rem;
     color: var(--very-dark-blue);
+
     @media (max-width: 768px) {
       margin-bottom: 2rem;
-
+      overflow-x: scroll;
+      white-space: nowrap;
       width: 100%;
     }
   }
@@ -240,11 +241,15 @@ const Shorten = styled.div`
     bottom: 1.8rem;
     transition: all 167ms;
     opacity: 0;
+
     @media (max-width: 768px) {
       font-size: 1.6rem;
       bottom: 1rem;
       margin-left: 3rem;
     }
+  }
+  .show {
+    opacity: 1;
   }
   input:focus {
     outline: none;

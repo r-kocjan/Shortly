@@ -82,12 +82,23 @@ const Container = styled.footer`
   align-items: flex-start;
   @media (max-width: 768px) {
     width: 90%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
   img {
     margin-right: auto;
+    @media (max-width: 768px) {
+      margin: 0 auto;
+      margin-bottom: 6rem;
+    }
   }
   .footer-menu {
     margin-right: 8rem;
+
+    @media (max-width: 768px) {
+      margin: 0;
+    }
     span {
       color: var(--white);
       font-size: 1.8rem;
@@ -97,6 +108,11 @@ const Container = styled.footer`
     li {
       margin-bottom: 1rem;
       cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      li:last-child {
+        margin-bottom: 3.5rem;
+      }
     }
     a {
       transition: all 167ms;
@@ -110,6 +126,9 @@ const Container = styled.footer`
     align-items: center;
     margin-left: 3rem;
     gap: 2rem;
+    @media (max-width: 768px) {
+      margin: 0 auto;
+    }
   }
 `;
 
